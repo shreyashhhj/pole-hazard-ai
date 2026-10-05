@@ -99,6 +99,6 @@ critical_poles = df[df["Status"] == "🔴 CRITICAL HAZARD"]
 if not critical_poles.empty:
     st.error(f"Attention: {len(critical_poles)} poles require immediate electrical shutdown and grounding inspection dispatch!")
     for idx, row in critical_poles.iterrows():
-        st.markdown(f"- **{row['Pole_ID']} ({row['Location'])**: Risk Score **{row['Hazard_Risk_Score']}/100** — *Age: {row['Pole_Age_Years']} yrs, Last Maintained: {row['Last_Maintenance_Months']} months ago.*")
+        st.markdown(f"- **{row['Pole_ID']} ({row['Location']})**: Risk Score **{row['Hazard_Risk_Score']}/100** — *Age: {row['Pole_Age_Years']} yrs, Last Maintained: {row['Last_Maintenance_Months']} months ago.*")
 else:
     st.success("All monitored poles are currently within safe hazard limits under current weather parameters.")
